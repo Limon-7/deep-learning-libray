@@ -1,6 +1,8 @@
 /pytorch/data
 /data/mnist
 test.ipynb
-log/
+logs/
 saved_weight/
 checkpoint/
+__pycache__/
+tempCodeRunnerFile.py
