@@ -11,7 +11,7 @@ batch_size = 2
 img_height = 28
 img_width = 28
 
-directory = "TensorFlow/dataset-pipeline/image/data/mnist_subfolders/"
+directory = "TensorFlow/dataset-pipeline/image/data/mnist_images_only/"
 ds_train = tf.data.Dataset.list_files(str(pathlib.Path(directory + "*.jpg"))) # list all files path
 
 
