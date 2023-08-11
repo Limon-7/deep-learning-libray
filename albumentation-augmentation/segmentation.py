@@ -6,9 +6,15 @@ import numpy as np
 from pathlib import Path
 from utils import plot_examples
 
-path = Path(__file__).parent / "images/cat.jpg"
+path = Path(__file__).parent / "images/elon.jpeg"
+mask_path = Path(__file__).parent / "images/mask.jpeg"
+mask_path2 = Path(__file__).parent / "images/second_mask.jpeg"
+
+print(mask_path2)
 
 image = Image.open(path)
+mask = Image.open(mask_path)
+mask1 = Image.open(mask_path2)
 
 transform = A.Compose(
     [
@@ -25,14 +31,20 @@ transform = A.Compose(
             ],
             p=1.0,
         ),
-    ]
+    ], is_check_shapes=False,
 )
 
 image_list = [image]
 image = np.array(image)
+mask = np.array(mask)
+mask1 = np.array(mask1)
+
 for i in range(10):
-    augmentations = transform(image=image)
+    augmentations = transform(image=image, masks= [mask,mask1])
     augmented_image = augmentations["image"]
+    augmented_mask = augmentations["masks"]
     image_list.append(augmented_image)
+    image_list.append(augmented_mask[0])
+    # image_list.append(augmented_mask[1])
 
 plot_examples(image_list)
