@@ -39,12 +39,12 @@ image = np.array(image)
 mask = np.array(mask)
 mask1 = np.array(mask1)
 
-for i in range(10):
+for i in range(4):
     augmentations = transform(image=image, masks= [mask,mask1])
     augmented_image = augmentations["image"]
     augmented_mask = augmentations["masks"]
     image_list.append(augmented_image)
     image_list.append(augmented_mask[0])
-    # image_list.append(augmented_mask[1])
+    image_list.append(augmented_mask[1])
 
 plot_examples(image_list)

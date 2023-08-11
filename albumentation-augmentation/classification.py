@@ -30,7 +30,7 @@ transform = A.Compose(
 
 image_list = [image]
 image = np.array(image)
-for i in range(10):
+for i in range(4):
     augmentations = transform(image=image)
     augmented_image = augmentations["image"]
     image_list.append(augmented_image)
