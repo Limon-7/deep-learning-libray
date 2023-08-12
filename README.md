@@ -1,5 +1,6 @@
 <p align="center"><img width="100%" src="images/torch_and_tf.svg" /></p>
---------------------------------------------------------------------------------
+<hr>
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)]()
 
 #### Language:
