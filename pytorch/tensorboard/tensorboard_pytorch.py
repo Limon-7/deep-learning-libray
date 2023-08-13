@@ -1,6 +1,8 @@
 # Imports
 import torchvision
 from torch.utils.tensorboard import SummaryWriter  # to print to tensorboard
+from torch.utils.data import DataLoader
+
 from config import (
     DATA_DIR,
     ROOT_DIR,
@@ -10,6 +12,7 @@ from config import (
     BATCH_SIZES,
     LEARNING_RATES,
     train_loader,
+    train_dataset,
     loss_fn,
     optimizer,
 )
@@ -23,7 +26,9 @@ for batch_size in BATCH_SIZES:
         model.to(DEVICE)
         model.train()
 
-        train_loader = train_loader(batch_size=batch_size)
+        train_loader = train_loader = DataLoader(
+        dataset=train_dataset, batch_size=batch_size, shuffle=True
+    )
         optimizer = optimizer(model, learning_rate)
         writer = SummaryWriter(
             f"{ROOT_DIR}/logs/MNIST/MiniBatchSize {batch_size} LR {learning_rate}"

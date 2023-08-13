@@ -27,11 +27,11 @@ train_dataset = datasets.MNIST(
 )
 
 
-def train_loader(batch_size=64):
-    train_loader = DataLoader(
-        dataset=train_dataset, batch_size=batch_size, shuffle=True
-    )
-    return train_loader
+# def train_loader(batch_size=64):
+#     train_loader = DataLoader(
+#         dataset=train_dataset, batch_size=batch_size, shuffle=True
+#     )
+#     return train_loader
 
 
 loss_fn = nn.CrossEntropyLoss()
