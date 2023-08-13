@@ -8,8 +8,7 @@ python-3
 ##### Framwork:
 1. Pytorch
 2. TensorFlow
-3. Keras
-
+   
 ##### Data Visualization:
 1. Tensorboard
 2. Matplotlib
